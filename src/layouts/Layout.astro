@@ -41,7 +41,7 @@ const { description, title, image } = Astro.props;
         font-family: 'Inter', sans-serif;
       }
       .sticky-header {
-        @apply fixed z-[9999] bg-white/80 transition dark:bg-dark/80;
+        @apply fixed z-[9999] bg-primary/80 transition dark:bg-dark/80;
         backdrop-filter: blur(5px);
         box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
       }
@@ -51,11 +51,11 @@ const { description, title, image } = Astro.props;
       }
 
       .sticky-header #navbarToggler span {
-        @apply bg-dark dark:bg-white;
+        @apply dark:bg-white;
       }
 
       .sticky-header #navbarCollapse li > a {
-        @apply text-dark hover:text-primary hover:opacity-100 dark:text-white dark:hover:text-primary;
+        @apply hover:opacity-100 dark:text-white dark:hover:text-primary;
       }
       #navbarCollapse li .ud-menu-scroll.active {
         @apply opacity-70;
@@ -68,7 +68,7 @@ const { description, title, image } = Astro.props;
       }
 
       .sticky-header .signUpBtn {
-        @apply bg-primary text-white hover:bg-blue-dark hover:text-white;
+        @apply hover:bg-blue-dark hover:text-white;
       }
 
       .sticky-header #themeSwitcher span {

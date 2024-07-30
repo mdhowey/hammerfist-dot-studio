@@ -29,7 +29,7 @@ module.exports = {
     extend: {
       colors: {
         white: '#FFFFFF',
-        black: '#212b36',
+        black: '#242424',
         'dark-700': '#090e34b3',
         dark: {
           DEFAULT: '#111928',
@@ -41,15 +41,15 @@ module.exports = {
           7: '#D1D5DB',
           8: '#E5E7EB',
         },
-        primary: '#3758F9',
-        'blue-dark': '#1B44C8',
-        secondary: '#13C296',
-        'body-color': '#637381',
-        'body-secondary': '#8899A8',
+        primary: '#102542',
+        'blue-dark': '#0D2338',
+        secondary: '#e3b37a',
+        'body-color': '#242424',
+        'body-secondary': '#b3a394',
         warning: '#FBBF24',
-        stroke: '#DFE4EA',
-        'gray-1': '#F9FAFB',
-        'gray-2': '#F3F4F6',
+        stroke: '#b3a394',
+        'gray-1': '#e3b37a',
+        'gray-2': '#b3a394',
         'gray-7': '#CED4DA',
       },
       boxShadow: {
