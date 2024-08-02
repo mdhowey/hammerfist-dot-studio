@@ -35,10 +35,6 @@ const blogCollection = defineCollection({
       paraFour: z.string(),
       paraFive: z.string(),
     }),
-    quotes: z.object({
-      quote: z.string(),
-      author: z.string(),
-    }),
   }),
 });
 
