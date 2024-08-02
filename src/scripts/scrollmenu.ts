@@ -1,41 +1,27 @@
-// ==== for menu scroll
-const pageLink = document.querySelectorAll(".ud-menu-scroll");
+// Smooth scrolling for menu links
+const pageLinks = document.querySelectorAll(".ud-menu-scroll");
 
-pageLink.forEach((elem) => {
-  elem.addEventListener("click", (e) => {
-    e.preventDefault();
-    document.querySelector(elem.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-      offsetTop: 1 - 60,
-    });
-  });
-});
-
-// section menu active
-function onScroll(event) {
+// Section menu active class toggle
+function onScroll() {
   const sections = document.querySelectorAll(".ud-menu-scroll");
-  const scrollPos =
-    window.pageYOffset ||
-    document.documentElement.scrollTop ||
-    document.body.scrollTop;
+  const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
 
-  for (let i = 0; i < sections.length; i++) {
-    const currLink = sections[i];
-    const val = currLink.getAttribute("href");
-    const refElement = document.querySelector(val);
-    const scrollTopMinus = scrollPos + 73;
-    if (
-      refElement.offsetTop <= scrollTopMinus &&
-      refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
-    ) {
-      document
-        .querySelector(".ud-menu-scroll")
-        .classList.remove("active");
-      currLink.classList.add("active");
-    } else {
-      currLink.classList.remove("active");
+  sections.forEach((currLink) => {
+    const refElement = document.querySelector(currLink.getAttribute("href"));
+    if (refElement) {
+      const offsetTop = refElement.offsetTop;
+      const offsetHeight = refElement.offsetHeight;
+      if (scrollPos >= offsetTop - 73 && scrollPos < offsetTop + offsetHeight) {
+        document.querySelector(".ud-menu-scroll.active")?.classList.remove("active");
+        currLink.classList.add("active");
+      } else {
+        currLink.classList.remove("active");
+      }
     }
-  }
+  });
 }
 
-window.document.addEventListener("scroll", onScroll);
+window.addEventListener("scroll", onScroll);
+
+// Initial call to set the active link on page load
+document.addEventListener("DOMContentLoaded", onScroll);
